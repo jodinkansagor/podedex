@@ -23,14 +23,18 @@
     <main>
         <form class = "search-form">
             <label>Search: <input type="text" name ="search"></label>
-            <select class="type">
+            <label>Pick a type:<select class="type">
                 <option value="">All Types!</option>
                 <option value="water">Water</option>
                 <option value="bug">Bug</option>
                 <option value="normal">Normal</option>
                 <option value="fire">Fire</option>
                 <option value="grass">Grass</option>
-            </select>
+                <option value="flying">Flying</option>
+            </select></label>
+            <label>Minimum Speed: <input type="text" name="speed"></label>
+            <label>Attack: <input type="text" name="attack"></label>
+            <label>Defense: <input type="text" name="defense"></label>
             <button>Get My Pokemon!</button>
         </form>
 
@@ -39,27 +43,69 @@
                 <li class="poke-item">
                     <img src = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/006_f2.png" alt="Charizard Mega X" />
                     <h2>Charizard Mega X</h2>
-                    <h2>Type: Fire</h2>
+                    <section class = "qualities">
+                        <h3>Type: Fire</h3>
+                        <h3>Speed: 100</h3>
+                    </section>
+                    <section class = "qualities">
+                            <h3>Attack: 130</h3>
+                            <h3>Defense: 111</h3>
+                        </section>
                 </li>
                 <li class="poke-item"><img src = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png" alt="Ivysaur" />
                     <h2>Ivysaur</h2>
-                    <h2>Type: Grass</h2>
+                    <section class = "qualities">
+                        <h3>Type: Grass</h3>
+                        <h3>Speed: 60</h3>
+                    </section>
+                    <section class = "qualities">
+                            <h3>Attack: 62</h3>
+                            <h3>Defense: 63</h3>
+                        </section>
                 </li>
                 <li class="poke-item"><img src = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="Squirtle" />
                     <h2>Squirtle</h2>
-                    <h2>Type: Water</h2>
+                    <section class="qualities">
+                        <h3>Type: Water</h3>
+                        <h3>Speed: 43</h3>
+                    </section>
+                    <section class = "qualities">
+                            <h3>Attack: 48</h3>
+                            <h3>Defense: 65</h3>
+                        </section>
                 </li>
                 <li class="poke-item"><img src = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/008.png" alt="Wartotle" />
                     <h2>Wartotle</h2>
-                    <h2>Type: Water</h2>
+                    <section class = "qualities">
+                        <h3>Type: Water</h3>
+                        <h3>Speed: 58</h3>
+                    </section>
+                    <section class = "qualities">
+                            <h3>Attack: 63</h3>
+                            <h3>Defense: 80</h3>
+                        </section>
                 </li>
                 <li class="poke-item"><img src = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png" alt="Caterpie" />
                     <h2>Carterpie</h2>
-                    <h2>Type: Bug</h2>
-                </li>
+                    <section class = "qualities">                        
+                        <h3>Type: Bug</h3>
+                        <h3>Speed: 45</h3>
+                    </section>
+                    <section class = "qualities">
+                            <h3>Attack: 30</h3>
+                            <h3>Defense: 35</h3>
+                        </section>
+                </li>   
                 <li class="poke-item"><img src = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png" alt="Pidgey" />
                     <h2>Pidgey</h2>
-                    <h2>Type: Normal</h2>
+                    <section class="qualities">
+                        <h3>Type: Normal</h3>
+                        <h3>Speed: 56</h3>
+                    </section>
+                    <section class = "qualities">
+                            <h3>Attack: 45</h3>
+                            <h3>Defense: 40</h3>
+                        </section>
                 </li>
                 <li class="poke-item"></li>
                 <li class="poke-item"></li>

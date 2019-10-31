@@ -1,7 +1,11 @@
 html {
     font-family: 'Itim', cursive;
-    background-color: #f8c603;
+    /* background-color: #f8c603; */
+    background-color: ivory;
 }
+
+
+/*header*/
 
 .logo img {
     width: 200px;
@@ -30,17 +34,21 @@ nav {
     justify-content: center;
 }
 
+/*search area*/
+
 main {
     margin-top: 10px;
 }
 
 select.type {
     margin-top: 5px;
+    margin-left: 5px;
     font-family: 'Itim', cursive;
-    width: 35%;
+    width: 50%;
 }
 
 form {
+    width: 100%;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -58,15 +66,24 @@ button {
     margin-top: 10px;
 }
 
+label {
+    width: 100%;
+    text-align: center;
+}
+
 input {
     border: 1px solid #3b5ca7;
+    margin-top: 5px;
 }
+
+/*pokemon area*/
 
 ul {
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0px;
 }
 
 li {
@@ -75,8 +92,11 @@ li {
     border: 20px solid #3b5ca7;
     padding: 20px;  
     width: 200px;
-    height: 250px;
+    height: 280px;
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
 }
 
 li img {
@@ -84,8 +104,32 @@ li img {
 }
 
 li h2 {
-    margin: 2px;
+    margin: 5px;
 }
+
+.qualities {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.qualities h3 {
+    border: 1px solid #3b5ca7;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 15px;
+    margin: 3px;
+}
+
+/*paging*/
+
+.pages button:disabled {
+    background-color: aliceblue;
+    color: grey;
+}
+
+/*media queries*/
 
 .pokemon-list {grid-area: list;}
 header {grid-area: headers;}
@@ -94,11 +138,21 @@ header {grid-area: headers;}
 
 @media (min-width: 450px) {
     main {
+        margin-top: 20px;
         display: grid;
         grid-gap: 10px;
         grid-template-columns: 300px 3fr;
         grid-template-areas: "search list"
             ".  pages";
+    }
+
+    nav a {
+        font-size: 25px;
+        padding: 5px;
+    }
+
+    .search-form {
+        padding-top: 20px;
     }
 
     .pokemon-list {
@@ -108,7 +162,7 @@ header {grid-area: headers;}
     }
 
     .logo img {
-        width: 300px;
+        width: 400px;
     }
 
 
