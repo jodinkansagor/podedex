@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <section class="logo">
+            <img src = "./assets/pokemonlogo.png">
+        </section>
+        <nav>
+            <a href = "https://www.pokemon.com">HOME</a>
+        </nav>
+    </header>
+    
+    <main>
+        <form class = "search-form">
+            <button>🔍</button>
+            <input type="text" name ="search">
+            <select class="type">
+                <option value="water">Water</option>
+                <option value="bug">Bug</option>
+                <option value="normal">Normal</option>
+                <option value="fire">Fire</option>
+                <option value="grass">Grass</option>
+            </select>
+        </form>
+
+        <section class = "pokemon-list">
+            <ul>
+                <li class="poke-item">
+                    <img src = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/006_f2.png" alt="Charizard Mega X" />
+                    <h2>Charizard Mega X</h2>
+                    <h2>Type: Fire</h2>
+                </li>
+                <li class="poke-item"><img src = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png" alt="Ivysaur" />
+                    <h2>Ivysaur</h2>
+                    <h2>Type: Grass</h2>
+                </li>
+                <li class="poke-item"><img src = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="Squirtle" />
+                    <h2>Squirtle</h2>
+                    <h2>Type: Water</h2>
+                </li>
+                <li class="poke-item"><img src = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/008.png" alt="Wartotle" />
+                    <h2>Wartotle</h2>
+                    <h2>Type: Water</h2>
+                </li>
+                <li class="poke-item"><img src = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png" alt="Caterpie" />
+                    <h2>Carterpie</h2>
+                    <h2>Type: Bug</h2>
+                </li>
+                <li class="poke-item"><img src = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png" alt="Pidgey" />
+                    <h2>Pidgey</h2>
+                    <h2>Type: Normal</h2>
+                </li>
+                <li class="poke-item"></li>
+                <li class="poke-item"></li>
+                <li class="poke-item"></li>
+                <li class="poke-item"></li>
+                <li class="poke-item"></li>
+                <li class="poke-item"></li>
+                <li class="poke-item"></li>
+                <li class="poke-item"></li>
+                <li class="poke-item"></li>
+                <li class="poke-item"></li>
+                <li class="poke-item"></li>
+                <li class="poke-item"></li>
+                <li class="poke-item"></li>
+                <li class="poke-item"></li>
+            </ul>
+        </section>
+        <section class = "pages">
+            <p class="paging">
+                <button class="prev" disabled>🡸</button>
+                <span>Page 1 of 5</span>
+                <button class="next">🡺</button>
+            </p>
+        </section>
+    </main>
+    <script type ="module" src="app.js"></script>
+</body>
+
+</html>
