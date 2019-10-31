@@ -16,25 +16,26 @@
             <img src = "./assets/pokemonlogo.png">
         </section>
         <nav>
-            <a href = "https://www.pokemon.com">HOME</a>
+            <a href = "https://www.pokemon.com">Home</a>
         </nav>
     </header>
     
     <main>
         <form class = "search-form">
-            <button>🔍</button>
-            <input type="text" name ="search">
+            <label>Search: <input type="text" name ="search"></label>
             <select class="type">
+                <option value="">All Types!</option>
                 <option value="water">Water</option>
                 <option value="bug">Bug</option>
                 <option value="normal">Normal</option>
                 <option value="fire">Fire</option>
                 <option value="grass">Grass</option>
             </select>
+            <button>Get My Pokemon!</button>
         </form>
 
-        <section class = "pokemon-list">
-            <ul>
+        <section>
+            <ul class="pokemon-list">
                 <li class="poke-item">
                     <img src = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/006_f2.png" alt="Charizard Mega X" />
                     <h2>Charizard Mega X</h2>

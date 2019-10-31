@@ -1,5 +1,6 @@
-body {
+html {
     font-family: 'Itim', cursive;
+    background-color: #f8c603;
 }
 
 .logo img {
@@ -16,7 +17,7 @@ nav a {
     font-size: 15px;
     color: white;
     background-color: #3b5ca7;
-    padding: 10px;
+    padding: 5px;
     border-radius: 20px;
     text-decoration: none;
     font-family: 'Itim', cursive;
@@ -31,16 +32,30 @@ nav {
 
 main {
     margin-top: 10px;
-    /* background-color: #3b5ca7; */
 }
 
-option {
+select.type {
+    margin-top: 5px;
     font-family: 'Itim', cursive;
+    width: 35%;
+}
+
+form {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
 }
 
 button {
-    background-color: white;
-    border: 0px solid;
+    font-size: 15px;
+    color: white;
+    background-color: #3b5ca7;
+    padding: 5px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-family: 'Itim', cursive;
+    margin-top: 10px;
 }
 
 input {
@@ -49,7 +64,6 @@ input {
 
 ul {
     padding: 10px;
-    background-color: #3b5ca7;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,10 +72,11 @@ ul {
 li {
     list-style: none;
     background-color: aliceblue; 
+    border: 20px solid #3b5ca7;
     padding: 20px;  
     width: 200px;
     height: 250px;
-    margin-top: 20px; 
+    margin: 10px;
 }
 
 li img {
@@ -72,23 +87,30 @@ li h2 {
     margin: 2px;
 }
 
-.pokemon-list {
-    grid-area: list;
-}
-
-.search-form {
-    grid-area: form;
-}
+.pokemon-list {grid-area: list;}
+header {grid-area: headers;}
+.search-form {grid-area: search;}
+.pages {grid-area: pages;}
 
 @media (min-width: 450px) {
     main {
         display: grid;
-        grid-template-areas: 'form list'
+        grid-gap: 10px;
+        grid-template-columns: 300px 3fr;
+        grid-template-areas: "search list"
+            ".  pages";
     }
+
+    .pokemon-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 300px);
+        grid-gap: 5px;
+    }
+
+    .logo img {
+        width: 300px;
+    }
+
+
 }
 
-.pokemon-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 5px;
-}
