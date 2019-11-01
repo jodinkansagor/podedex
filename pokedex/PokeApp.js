@@ -1,9 +1,10 @@
-import Component from '../Component.js';
+
 import Header from '../pokedex/Header.js';
 import Paging from '../pokedex/Paging.js';
-// import PokeItem from '../pokedex/PokeItem.js';
+import PokeItem from '../pokedex/PokeItem.js';
 import PokeList from '../pokedex/PokeList.js';
 import Search from '../pokedex/Search.js';
+import Component from '../Component.js';
 
 const pokeData = [
     {
@@ -26,7 +27,7 @@ class PokeApp extends Component {
         const searchOptions = new Search();
         optionsSection.appendChild(searchOptions);
 
-        const pokeList = new PokeList({ pokeData: pokeData })
+        const pokeList = new PokeList({ pokeData: pokeData });
         const pokeListOnPage = dom.querySelector('.pokemon-list');
         pokeListOnPage.appendChild(pokeList);
 
