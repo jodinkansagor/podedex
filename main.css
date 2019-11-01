@@ -1,0 +1,169 @@
+html {
+    font-family: 'Itim', cursive;
+    background-color: ivory;
+}
+
+
+/*header*/
+
+.logo img {
+    width: 200px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+nav a {
+    font-size: 15px;
+    color: white;
+    background-color: #3b5ca7;
+    padding: 5px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: 'Itim', cursive;
+    margin-top: 10px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/*search area*/
+
+main {
+    margin-top: 10px;
+}
+
+select.type {
+    margin-top: 5px;
+    margin-left: 5px;
+    font-family: 'Itim', cursive;
+    width: 50%;
+}
+
+form {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+button {
+    font-size: 15px;
+    color: white;
+    background-color: #3b5ca7;
+    padding: 5px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-family: 'Itim', cursive;
+    margin-top: 10px;
+}
+
+label {
+    width: 100%;
+    text-align: center;
+}
+
+input {
+    border: 1px solid #3b5ca7;
+    margin-top: 5px;
+}
+
+/*pokemon area*/
+
+ul {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+}
+
+li {
+    list-style: none;
+    background-color: aliceblue; 
+    border: 20px solid #3b5ca7;
+    padding: 20px;  
+    width: 200px;
+    height: 280px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+li img {
+    width: 175px;
+}
+
+li h2 {
+    margin: 5px;
+}
+
+.qualities {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.qualities h3 {
+    border: 1px solid #3b5ca7;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 15px;
+    margin: 3px;
+}
+
+/*paging*/
+
+.pages button:disabled {
+    background-color: aliceblue;
+    color: grey;
+}
+
+/*media queries*/
+
+.pokemon-list {grid-area: list;}
+header {grid-area: headers;}
+.search-form {grid-area: search;}
+.pages {grid-area: pages;}
+
+@media (min-width: 450px) {
+    main {
+        margin-top: 20px;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 300px 3fr;
+        grid-template-areas: "search list"
+            ".  pages";
+    }
+
+    nav a {
+        font-size: 25px;
+        padding: 5px;
+    }
+
+    .search-form {
+        padding-top: 20px;
+    }
+
+    .pokemon-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 300px);
+        grid-gap: 5px;
+    }
+
+    .logo img {
+        width: 400px;
+    }
+
+
+}
+
