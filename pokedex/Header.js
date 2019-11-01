@@ -8,7 +8,8 @@ class Header extends Component {
                     <img src = "./assets/pokemonlogo.png">
                 </section>
                 <nav>
-                    <a href = "https://www.pokemon.com">Home</a>
+                    <a href = "index.html">Home</a>
+                    <a href = "../pokedex.html">Pokemon</a>
                 </nav>
             </header>
         `;

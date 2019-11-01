@@ -1,6 +1,6 @@
-html {
+body {
     font-family: 'Itim', cursive;
-    background-color: ivory;
+    background-color: lemonchiffon;
 }
 
 
@@ -20,11 +20,12 @@ nav a {
     font-size: 15px;
     color: white;
     background-color: #3b5ca7;
-    padding: 5px;
+    padding: 7px;
     border-radius: 20px;
     text-decoration: none;
     font-family: 'Itim', cursive;
     margin-top: 10px;
+    margin-left: 10px;
 }
 
 nav {
@@ -88,7 +89,7 @@ ul {
 li {
     list-style: none;
     background-color: aliceblue; 
-    border: 20px solid #3b5ca7;
+    /* border: 20px solid ; */
     padding: 20px;  
     width: 200px;
     height: 280px;
@@ -96,6 +97,30 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center
+}
+
+.fire {
+    border: 20px solid 	#CD5C5C;
+}
+
+.grass {
+    border: 20px solid #3CB371;
+}
+
+.water {
+    border: 20px solid #3b5ca7;
+}
+
+.bug {
+    border: 20px solid 	#A0522D;
+}
+
+.normal {
+    border: 20px solid grey;
+}
+
+.flying {
+    border: 20px solid 	#7FFFD4;
 }
 
 li img {
@@ -128,6 +153,7 @@ li h2 {
     color: grey;
 }
 
+
 /*media queries*/
 
 .pokemon-list {grid-area: list;}
@@ -154,7 +180,7 @@ header {grid-area: headers;}
         padding-top: 20px;
     }
 
-    .pokemon-list {
+    #pokemon-list {
         display: grid;
         grid-template-columns: repeat(auto-fill, 300px);
         grid-gap: 5px;

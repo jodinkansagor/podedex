@@ -1,25 +1,16 @@
 
 import Header from '../pokedex/Header.js';
 import Paging from '../pokedex/Paging.js';
-import PokeItem from '../pokedex/PokeItem.js';
 import PokeList from '../pokedex/PokeList.js';
 import Search from '../pokedex/Search.js';
 import Component from '../Component.js';
+import { getPokemon } from '../services/pokemon-api.js';
 
-const pokeData = [
-    {
-        pokemon: 'venusaur',
-        attack: 82,
-        defense: 83,
-        speed: 80,
-        type1: 'grass',
-        url_image: 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png'
-    }
-];
+
 
 class PokeApp extends Component {
 
-    onRender(dom) {
+    async onRender(dom) {
         const header = new Header();
         dom.prepend(header.renderDOM());
 
@@ -27,14 +18,17 @@ class PokeApp extends Component {
         const searchOptions = new Search();
         optionsSection.appendChild(searchOptions.renderDOM());
 
-        const pokeList = new PokeList({ pokeData: pokeData });
+        const pokeList = new PokeList({ pokeData: [] });
         const pokeListOnPage = dom.querySelector('.pokemon-list');
         pokeListOnPage.appendChild(pokeList.renderDOM());
 
+        const response = await getPokemon();
+        const pokeData = response.results;
+        pokeList.update({ pokeData });
+      
         const pokemonPages = dom.querySelector('.pages');
         const pokemonPageList = new Paging();
         pokemonPages.appendChild(pokemonPageList.renderDOM());
-
     }
 
     renderHTML() {
