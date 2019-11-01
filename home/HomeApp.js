@@ -1,5 +1,5 @@
-import Component from "../Component.js";
-import Header from "../pokedex/Header.js";
+import Component from '../Component.js';
+import Header from '../pokedex/Header.js';
 
 class HomeApp extends Component {
     onRender(dom){

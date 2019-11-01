@@ -10,7 +10,7 @@ class PokeItem extends Component {
         };
         
         let capPoke = capitalize(`${pokeData.pokemon}`);
-        let capType = capitalize(`${pokeData.type_1}`)
+        let capType = capitalize(`${pokeData.type_1}`);
 
         return /*html*/ `
             <li class = "poke-item">
