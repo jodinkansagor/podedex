@@ -1,7 +1,7 @@
 import Component from '../Component.js';
 
 class Paging extends Component {
-    renderHTLM() {
+    renderHTML() {
         return /*html*/`
             <section class = "pages">
                 <p class="paging">

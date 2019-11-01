@@ -25,15 +25,15 @@ class PokeApp extends Component {
 
         const optionsSection = dom.querySelector('.options');
         const searchOptions = new Search();
-        optionsSection.appendChild(searchOptions);
+        optionsSection.appendChild(searchOptions.renderDOM());
 
         const pokeList = new PokeList({ pokeData: pokeData });
         const pokeListOnPage = dom.querySelector('.pokemon-list');
-        pokeListOnPage.appendChild(pokeList);
+        pokeListOnPage.appendChild(pokeList.renderDOM());
 
         const pokemonPages = dom.querySelector('.pages');
         const pokemonPageList = new Paging();
-        pokemonPages.appendChild(pokemonPageList);
+        pokemonPages.appendChild(pokemonPageList.renderDOM());
 
     }
 
