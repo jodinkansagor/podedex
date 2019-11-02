@@ -5,6 +5,7 @@ class Search extends Component {
     onRender(form) {
         const searchInput = form.querySelector('input[name=search]');
         const typeOptions = form.querySelectorAll('select[name=type]');
+        const speedInput = form.querySelector('input[name=speed]');
         
         
         // const speedInput = form.querySelectorAll('input[name="speed"]');
@@ -38,7 +39,10 @@ class Search extends Component {
             const searchParams = new URLSearchParams(queryString);
 
             searchParams.set('pokemon', formData.get('search'));
-            searchParams.set('type_1', formData.get('type'));        
+            searchParams.set('type_1', formData.get('type'));  
+            searchParams.set('speed', formData.get('speed'));
+            // searchParams.set('attack', formData.get('attack')); 
+            // searchParams.set('defense', formData.get('defense'));       
             // searchParams.set('page', 1);
             console.log(searchParams);
             window.location.hash = searchParams.toString();
