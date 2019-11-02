@@ -99,30 +99,6 @@ li {
     align-items: center
 }
 
-.fire {
-    border: 20px solid 	#CD5C5C;
-}
-
-.grass {
-    border: 20px solid #3CB371;
-}
-
-.water {
-    border: 20px solid #3b5ca7;
-}
-
-.bug {
-    border: 20px solid 	#A0522D;
-}
-
-.normal {
-    border: 20px solid grey;
-}
-
-.flying {
-    border: 20px solid 	#7FFFD4;
-}
-
 li img {
     width: 175px;
 }

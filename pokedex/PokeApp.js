@@ -10,21 +10,32 @@ import { getPokemon } from '../services/pokemon-api.js';
 
 class PokeApp extends Component {
 
-    async onRender(dom) {
+    onRender(dom) {
         const header = new Header();
         dom.prepend(header.renderDOM());
 
         const optionsSection = dom.querySelector('.options');
-        const searchOptions = new Search();
+        const searchOptions = new Search({ pokeData: [] });
         optionsSection.appendChild(searchOptions.renderDOM());
 
         const pokeList = new PokeList({ pokeData: [] });
         const pokeListOnPage = dom.querySelector('.pokemon-list');
         pokeListOnPage.appendChild(pokeList.renderDOM());
 
-        const response = await getPokemon();
-        const pokeData = response.results;
-        pokeList.update({ pokeData });
+        async function loadPokemon() {
+            const response = await getPokemon();
+            const pokeData = response.results;
+            // const totalResults = response.totalResults;
+            pokeList.update({ pokeData });
+            searchOptions.update({ pokeData });
+            // pokemonPageList.update({ totalResults });
+        }
+
+        loadPokemon();
+
+        window.addEventListener('hashchange', () => {
+            loadPokemon();  
+        });
       
         const pokemonPages = dom.querySelector('.pages');
         const pokemonPageList = new Paging();

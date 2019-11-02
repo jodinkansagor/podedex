@@ -13,7 +13,7 @@ class PokeItem extends Component {
         let capType = capitalize(`${pokeData.type_1}`);
 
         return /*html*/ `
-            <li class = "poke-item">
+            <li class = "poke-item" style="border: 20px solid ${pokeData.color_1}">
                 <img src = ${pokeData.url_image} alt=${pokeData.pokemon} />
                 <h2>${capPoke}</h2>
                 <section class = "qualities">
