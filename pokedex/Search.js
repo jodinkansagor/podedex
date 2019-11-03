@@ -3,9 +3,9 @@ import Component from '../Component.js';
 class Search extends Component {
 
     onRender(form) {
-        const searchInput = form.querySelector('input[name=search]');
-        const typeOptions = form.querySelectorAll('select[name=type]');
-        const speedInput = form.querySelector('input[name=speed]');
+        // const searchInput = form.querySelector('input[name=search]');
+        // const typeOptions = form.querySelectorAll('select[name=type]');
+        // const speedInput = form.querySelector('input[name=speed]');
         
         
         // const speedInput = form.querySelectorAll('input[name="speed"]');

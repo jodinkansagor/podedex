@@ -6,12 +6,12 @@ export async function getPokemon() {
     const url = `${URL}?${queryString}`;
     const response = await fetch(url);
     const data = await response.json();
-
+    console.log(data);
 
     if (data.results === 'False') {
         return {
-            Search: [],
-            totalResults: 0
+            results: [],
+            count: 0
         };
     }
     return data;

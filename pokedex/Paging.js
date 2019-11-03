@@ -2,11 +2,9 @@ import Component from '../Component.js';
 
 class Paging extends Component {
 
-    onRender(el) {
-        
-        const prevButton = el.querySelector('.prev');
-        // const nextButton = el.queryselector('.next');
-        console.log(el);
+    onRender(dom) {
+        const prevButton = dom.querySelector('.prev');
+        const nextButton = dom.querySelector('.next');
 
         if (!prevButton) {
             return;
@@ -44,47 +42,45 @@ class Paging extends Component {
             updatePage(-1);
         });
 
-        // nextButton.addEventListener('click', () => {
-        //     updatePage(1);
-        // });
+        nextButton.addEventListener('click', () => {
+            updatePage(1);
+        });
     }
 
     renderHTML() {
-        // const perPage = 10;
-        // const totalResults = this.props.totalResults;
-        // console.log(totalResults);
-        // const queryString = window.location.hash.slice(1);
-        // const searchParams = new URLSearchParams(queryString);
+        const perPage = 20;
+        const count = this.props.count;
+        console.log({ count });
 
-        // let page = 1;
-        // const parsedPage = parseInt(searchParams.get('page'));
-        // if (isNaN(parsedPage)) {
-        //     page = 1;
-        // } else {
-        //     page = parsedPage;
-        // }
+        const queryString = window.location.hash.slice(1);
+        const searchParams = new URLSearchParams(queryString);
 
-        // if (!totalResults) {
-        //     return /*html*/ `
-        //         <p class = paging>No results, try another search</p>
-        //     `;
-        // }
+        let page = 1;
+        const parsedPage = parseInt(searchParams.get('page'));
+        if (isNaN(parsedPage)) {
+            page = 1;
+        } else {
+            page = parsedPage;
+        }
 
-        // const lastPage = Math.ceil(totalResults / perPage);
+        if (!count) {
+            return /*html*/ `
+                <p class = "paging">No results, try another search</p>
+            `;
+        }
+
+        const lastPage = Math.ceil(count / perPage);
 
         return /*html*/`
             
-                <p class="paging">
-                    <button class="prev" disabled>🡸</button>
-                    <button class="next" >🡺</button>
-                </p>
-           
+            <p class="paging">
+                <button class="prev" ${page === 1 ? 'disabled' : ''}>🡸</button>
+                <span>Page ${page} of ${lastPage}</span> 
+                <button class="next" ${page === lastPage ? 'disabled' : ''}>🡺</button>
+            </p>
         `;
     }
 }
 
 export default Paging;
 
-/* {<span>Page ${page} of ${lastPage}</span>} */
-// ${page === 1 ? 'disabled' : ''}>
-// ${page === lastPage ? 'disabled' : ''}

@@ -22,16 +22,18 @@ class PokeApp extends Component {
         const pokeListOnPage = dom.querySelector('.pokemon-list');
         pokeListOnPage.appendChild(pokeList.renderDOM());
 
-        // const pokemonPages = dom.querySelector('.pages');
-        const pokemonPaging = new Paging({ totalResults: 0 });
-        pokeListOnPage.appendChild(pokemonPaging.renderDOM());
-
+        const pokemonPages = dom.querySelector('.pages');
+        const pokemonPaging = new Paging({ count: 0 });
+        pokemonPages.appendChild(pokemonPaging.renderDOM());
+        
         async function loadPokemon() {
             const response = await getPokemon();
             const pokeData = response.results;
-            const totalResults = response.totalResults;
+            const count = response.count;
+            console.log(count);
             pokeList.update({ pokeData });
-            pokemonPaging.update({ totalResults });
+            pokemonPaging.update({ count });
+            console.log({ count });
         }
 
         loadPokemon();
