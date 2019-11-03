@@ -2,50 +2,52 @@ import Component from '../Component.js';
 
 class Paging extends Component {
 
-//     onRender(dom) {
-//         const prevButton = dom.querySelector('.prev');
-//         const nextButton = dom.queryselector('.next');
+    onRender(el) {
+        
+        const prevButton = el.querySelector('.prev');
+        // const nextButton = el.queryselector('.next');
+        console.log(el);
 
-//         if (!prevButton) {
-//             return;
-//         }
+        if (!prevButton) {
+            return;
+        }
 
-//         let page = 1;
+        let page = 1;
 
-        // function updateControls() {
-        //     const queryString = window.location.hash.slice(1);
-        //     const searchParams = new URLSearchParams(queryString);
+        function updateControls() {
+            const queryString = window.location.hash.slice(1);
+            const searchParams = new URLSearchParams(queryString);
 
-        //     const parsedPage = parseInt(searchParams.get('page'));
-        //     if (isNaN(parsedPage)) {
-        //         page = 1;
-        //     } else {
-        //         page = parsedPage;
-        //     }
-        // }
+            const parsedPage = parseInt(searchParams.get('page'));
+            if (isNaN(parsedPage)) {
+                page = 1;
+            } else {
+                page = parsedPage;
+            }
+        }
 
-        // updateControls();
+        updateControls();
 
-        // window.addEventListener('hashchange', () => {
-        //     updateControls();
+        window.addEventListener('hashchange', () => {
+            updateControls();
+        });
+
+        function updatePage(increment) {
+            const queryString = window.location.hash.slice(1);
+            const searchParams = new URLSearchParams(queryString);
+            searchParams.set('page', page + increment);
+
+            window.location.hash = searchParams.toString();
+        }
+
+        prevButton.addEventListener('click', () => {
+            updatePage(-1);
+        });
+
+        // nextButton.addEventListener('click', () => {
+        //     updatePage(1);
         // });
-
-    //     function updatePage(increment) {
-    //         const queryString = window.location.hash.slice(1);
-    //         const searchParams = new URLSearchParams(queryString);
-    //         searchParams.set('page', page + increment);
-
-    //         window.location.hash = searchParams.toString();
-    //     }
-
-    //     prevButton.addEventListener('click', () => {
-    //         updatePage(-1);
-    //     });
-
-    //     nextButton.addEventListener('click', () => {
-    //         updatePage(1);
-    //     });
-    // }
+    }
 
     renderHTML() {
         // const perPage = 10;
@@ -71,19 +73,18 @@ class Paging extends Component {
         // const lastPage = Math.ceil(totalResults / perPage);
 
         return /*html*/`
-            <section class = "pages">
+            
                 <p class="paging">
-                    <button class="prev">🡸</button>
-                    
+                    <button class="prev" disabled>🡸</button>
                     <button class="next" >🡺</button>
                 </p>
-            </section>
+           
         `;
     }
 }
 
 export default Paging;
 
-{/* <span>Page ${page} of ${lastPage}</span> */}
+/* {<span>Page ${page} of ${lastPage}</span>} */
 // ${page === 1 ? 'disabled' : ''}>
 // ${page === lastPage ? 'disabled' : ''}

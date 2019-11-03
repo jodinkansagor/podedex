@@ -3,9 +3,7 @@ const URL = 'https://alchemy-pokedex.herokuapp.com/api/pokedex';
 export async function getPokemon() {
 
     let queryString = window.location.hash.slice(1);
-    console.log(queryString);
     const url = `${URL}?${queryString}`;
-    console.log(url);
     const response = await fetch(url);
     const data = await response.json();
 

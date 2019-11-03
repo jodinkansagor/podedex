@@ -3,8 +3,10 @@ import PokeItem from './PokeItem.js';
 
 class PokeList extends Component {
 
+
     onRender(dom) {
         const pokeData = this.props.pokeData;
+        
         pokeData.forEach(pokeData => {
             const props = { pokeData: pokeData };
             const pokeItem = new PokeItem(props);

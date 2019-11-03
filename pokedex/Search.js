@@ -40,11 +40,10 @@ class Search extends Component {
 
             searchParams.set('pokemon', formData.get('search'));
             searchParams.set('type_1', formData.get('type'));  
-            searchParams.set('speed', formData.get('speed'));
+            // searchParams.set('speed', formData.get('speed'));
             // searchParams.set('attack', formData.get('attack')); 
             // searchParams.set('defense', formData.get('defense'));       
             // searchParams.set('page', 1);
-            console.log(searchParams);
             window.location.hash = searchParams.toString();
             
         });
