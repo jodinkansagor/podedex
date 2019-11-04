@@ -6,8 +6,8 @@ class Search extends Component {
         const searchInput = form.querySelector('input[name=search]');
         const typeOptions = form.querySelectorAll('select[name=type]');
         const speedInput = form.querySelector('input[name=speed]');
-        const attackInput = form.querySelectorAll('input[name="attack"]');
-        const defenseInput = form.querySelectorAll('input[name="defense"]');
+        const attackInput = form.querySelector('input[name=attack]');
+        const defenseInput = form.querySelector('input[name=defense]');
 
         function updateControls() {
             const queryString = window.location.hash.slice(1);
@@ -39,9 +39,25 @@ class Search extends Component {
 
             searchParams.set('pokemon', formData.get('search'));
             searchParams.set('type_1', formData.get('type'));  
-            searchParams.set('speed', formData.get('speed'));
-            searchParams.set('attack', formData.get('attack')); 
-            searchParams.set('defense', formData.get('defense'));       
+
+            if (formData.get('speed') === '') {
+                searchParams.set('speed', 0);
+            } else {
+                searchParams.set('speed', formData.get('speed')); 
+            }
+
+            if (formData.get('attack') === '') {
+                searchParams.set('attack', 0);
+            } else {
+                searchParams.set('attack', formData.get('attack')); 
+            }
+
+            if (formData.get('defense') === '') {
+                searchParams.set('defense', 0);       
+            } else {
+                searchParams.set('defense', formData.get('defense'));       
+            }
+
             searchParams.set('page', 1);
             window.location.hash = searchParams.toString();
             
