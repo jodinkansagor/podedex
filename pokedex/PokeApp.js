@@ -30,10 +30,9 @@ class PokeApp extends Component {
             const response = await getPokemon();
             const pokeData = response.results;
             const count = response.count;
-            console.log(count);
+    
             pokeList.update({ pokeData });
             pokemonPaging.update({ count });
-            console.log({ count });
         }
 
         loadPokemon();

@@ -3,33 +3,32 @@ import Component from '../Component.js';
 class Search extends Component {
 
     onRender(form) {
-        // const searchInput = form.querySelector('input[name=search]');
-        // const typeOptions = form.querySelectorAll('select[name=type]');
-        // const speedInput = form.querySelector('input[name=speed]');
-        
-        
-        // const speedInput = form.querySelectorAll('input[name="speed"]');
-        // const attackInput = form.querySelectorAll('input[name="attack"]');
-        // const defenseInput = form.querySelectorAll('input[name="defense"]');
+        const searchInput = form.querySelector('input[name=search]');
+        const typeOptions = form.querySelectorAll('select[name=type]');
+        const speedInput = form.querySelector('input[name=speed]');
+        const attackInput = form.querySelectorAll('input[name="attack"]');
+        const defenseInput = form.querySelectorAll('input[name="defense"]');
 
-        // function updateControls() {
-        //     const queryString = window.location.hash.slice(1);
-        //     const searchParams = new URLSearchParams(queryString);
+        function updateControls() {
+            const queryString = window.location.hash.slice(1);
+            const searchParams = new URLSearchParams(queryString);
 
-        //     searchInput.value = searchParams.get('s') || '';
+            searchInput.value = searchParams.get('pokemon') || '';
+            const type = searchParams.get('type');
+            if (type) {
+                typeOptions.forEach(typeOption => {
+                    typeOption.selected === typeOption.value;
+                });
+            }
 
-            // const type = searchParams.get('type');
-            // if (type) {
-            //     typeDropdowns.forEach(typeDropdown => {
-            //         something here about the drop downs
-            //     })
-            // }
-        // }
+            speedInput.value = searchParams.get('speed') || '';
+            attackInput.value = searchParams.get('attack') || '';
+            defenseInput.value = searchParams.get('defense') || '';
+        }
     
-        // window.addEventListener('hashchange', () => {
-        //     updateControls();
-        //     console.log(searchInput);
-        // });
+        window.addEventListener('hashchange', () => {
+            updateControls();
+        });
 
         form.addEventListener('submit', event => {
             event.preventDefault();
@@ -40,10 +39,10 @@ class Search extends Component {
 
             searchParams.set('pokemon', formData.get('search'));
             searchParams.set('type_1', formData.get('type'));  
-            // searchParams.set('speed', formData.get('speed'));
-            // searchParams.set('attack', formData.get('attack')); 
-            // searchParams.set('defense', formData.get('defense'));       
-            // searchParams.set('page', 1);
+            searchParams.set('speed', formData.get('speed'));
+            searchParams.set('attack', formData.get('attack')); 
+            searchParams.set('defense', formData.get('defense'));       
+            searchParams.set('page', 1);
             window.location.hash = searchParams.toString();
             
         });
