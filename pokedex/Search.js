@@ -38,14 +38,14 @@ class Search extends Component {
             const searchParams = new URLSearchParams(queryString);
 
             searchParams.set('pokemon', formData.get('search'));
-            searchParams.set('type_1', formData.get('type'));  
+            searchParams.set('type_1', formData.get('type')); 
 
             if (formData.get('speed') === '') {
                 searchParams.set('speed', 0);
             } else {
                 searchParams.set('speed', formData.get('speed')); 
             }
-
+             
             if (formData.get('attack') === '') {
                 searchParams.set('attack', 0);
             } else {
@@ -58,6 +58,7 @@ class Search extends Component {
                 searchParams.set('defense', formData.get('defense'));       
             }
 
+            
             searchParams.set('page', 1);
             window.location.hash = searchParams.toString();
             
@@ -88,12 +89,13 @@ class Search extends Component {
                     <option value="dark">Dark</option>
                     <option value="steel">Steel</option>
                     <option value="fairie">Fairie</option>
-                    
                 </select></label>
+                
                 <label>Minimum Speed: <input type="text" name="speed"></label>
-                <label>Attack: <input type="text" name="attack"></label>
-                <label>Defense: <input type="text" name="defense"></label>
+                <label>Minimum Attack: <input type="text" name="attack"></label>
+                <label>Minimum Defense: <input type="text" name="defense"></label>
                 <button>Get My Pokemon!</button>
+                <button><a href = "../pokedex.html">Reset Your Search</a></button>
             </form>
         `;
     }
