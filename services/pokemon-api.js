@@ -6,7 +6,6 @@ export async function getPokemon() {
     const url = `${URL}?${queryString}`;
     const response = await fetch(url);
     const data = await response.json();
-    console.log(url);
 
     if (data.results === 'False') {
         return {

@@ -5,8 +5,8 @@ class PokeList extends Component {
 
 
     onRender(dom) {
-        
-        const pokeData = this.props.pokeData;
+
+        const pokeData = this.props.pokeData.sort((a, b) => a.id - b.id);
         
         pokeData.forEach(pokeData => {
             const props = { pokeData: pokeData };
