@@ -40,10 +40,12 @@ class Paging extends Component {
 
         prevButton.addEventListener('click', () => {
             updatePage(-1);
+            window.scrollTo(0, 0);
         });
 
         nextButton.addEventListener('click', () => {
             updatePage(1);
+            window.scrollTo(0, 0);
         });
     }
 

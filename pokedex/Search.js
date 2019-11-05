@@ -45,12 +45,8 @@ class Search extends Component {
             } else {
                 searchParams.set('speed', formData.get('speed')); 
             }
-             
-            if (formData.get('attack') === '') {
-                searchParams.set('attack', 0);
-            } else {
-                searchParams.set('attack', formData.get('attack')); 
-            }
+            
+            searchParams.set('attack', formData.get('attack') === '' ? 0 : formData.get('attack'));
 
             if (formData.get('defense') === '') {
                 searchParams.set('defense', 0);       
@@ -60,6 +56,8 @@ class Search extends Component {
 
             
             searchParams.set('page', 1);
+            
+            
             window.location.hash = searchParams.toString();
             
         });
@@ -88,7 +86,7 @@ class Search extends Component {
                     <option value="dragon">Dragon</option>
                     <option value="dark">Dark</option>
                     <option value="steel">Steel</option>
-                    <option value="fairie">Fairie</option>
+                    <option value="fairy">Fairy</option>
                 </select></label>
                 
                 <label>Minimum Speed: <input type="text" name="speed"></label>
